@@ -4,8 +4,11 @@
   "description": "MCP Server for accessing News API endpoints.",
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "mcp-newsapi": "build/index.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && shx chmod +x build/*.js",
     "start": "node build/index.js",
     "lint": "eslint --fix --ext .ts src/",
     "typecheck": "tsc --noEmit"
@@ -32,6 +35,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.6",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "shx": "^0.3.4"
   }
 }
